@@ -1,25 +1,45 @@
+import 'package:appointment_app/core/di/dependancy_injection.dart';
 import 'package:appointment_app/core/routing/routes.dart';
-import 'package:appointment_app/features/login/presentation/screen/login_screen.dart';
-import 'package:appointment_app/features/onboarding/onboarding_screen.dart';
+import 'package:appointment_app/features/auth/auth_cubit/auth_cubit.dart';
+import 'package:appointment_app/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
-class AppRouter{
+import '../../features/auth/login/presentation/login_screen.dart';
+import '../../features/auth/sign_up/presentation/sign_up_screen.dart';
+import '../../features/onboarding/onboarding_screen.dart';
 
-  Route generateRoute(RouteSettings settings){
-    switch(settings.name){
+class AppRouter {
+
+  Route generateRoute(RouteSettings settings) {
+    switch (settings.name) {
       case Routes.onboardingScreen:
-        return MaterialPageRoute(builder: (_)=>OnboardingScreen());
+        return MaterialPageRoute(builder: (_) => OnboardingScreen());
       case Routes.loginScreen:
-        return MaterialPageRoute(builder: (_)=>LoginScreen());
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => getIt<AuthCubit>(),
+              child: LoginScreen(),
+            ));
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (_) => HomeScreen());
+      case Routes.signupScreen:
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => getIt<AuthCubit>(),
+              child: SignUpScreen(),
+            ));
       default:
-        return MaterialPageRoute(builder: (_)=>Scaffold(
-          body: Text("No routing in ${settings.name}",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black
-          ),),
-        ));
+        return MaterialPageRoute(builder: (_) =>
+            Scaffold(
+              body: Text("No routing in ${settings.name}",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
+                ),),
+            ));
     }
   }
 }
