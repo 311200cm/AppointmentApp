@@ -1,5 +1,5 @@
 import 'package:appointment_app/core/helpers/extensions.dart';
-import 'package:appointment_app/features/auth/auth_cubit/auth_cubit.dart';
+import 'package:appointment_app/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +13,7 @@ class SignUpListener extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit,AuthState>(
+    return BlocListener<SignUpCubit,SignUpState>(
         listener:(context,state){
           if(state is SignupLoading){
             showDialog(

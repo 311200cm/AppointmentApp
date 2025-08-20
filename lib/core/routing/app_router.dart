@@ -1,14 +1,14 @@
 import 'package:appointment_app/core/di/dependancy_injection.dart';
 import 'package:appointment_app/core/routing/routes.dart';
-import 'package:appointment_app/features/auth/auth_cubit/auth_cubit.dart';
 import 'package:appointment_app/features/home/presentation/home_screen.dart';
+import 'package:appointment_app/features/login/logic/login_cubit.dart';
+import 'package:appointment_app/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-
-import '../../features/auth/login/presentation/login_screen.dart';
-import '../../features/auth/sign_up/presentation/sign_up_screen.dart';
+import '../../features/login/presentation/login_screen.dart';
 import '../../features/onboarding/onboarding_screen.dart';
+import '../../features/sign_up/presentation/sign_up_screen.dart';
 
 class AppRouter {
 
@@ -19,7 +19,7 @@ class AppRouter {
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) =>
             BlocProvider(
-              create: (context) => getIt<AuthCubit>(),
+              create: (context) => getIt<LoginCubit>(),
               child: LoginScreen(),
             ));
       case Routes.homeScreen:
@@ -27,7 +27,7 @@ class AppRouter {
       case Routes.signupScreen:
         return MaterialPageRoute(builder: (_) =>
             BlocProvider(
-              create: (context) => getIt<AuthCubit>(),
+              create: (context) => getIt<SignUpCubit>(),
               child: SignUpScreen(),
             ));
       default:

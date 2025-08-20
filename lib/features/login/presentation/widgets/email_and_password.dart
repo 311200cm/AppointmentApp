@@ -1,11 +1,12 @@
 import 'package:appointment_app/core/helpers/app_regex.dart';
-import 'package:appointment_app/features/auth/login/presentation/widgets/password_validator.dart';
+import 'package:appointment_app/features/login/logic/login_cubit.dart';
+import 'package:appointment_app/features/login/presentation/widgets/password_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/common_widgets/app_text_form_field.dart';
-import '../../../auth_cubit/auth_cubit.dart';
+
 
 
 
@@ -30,9 +31,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
 
   void initState(){
     super.initState();
-    email= context.read<AuthCubit>().emailController;
-    password= context.read<AuthCubit>().passwordController;
-    form= context.read<AuthCubit>().formKey;
+    email= context.read<LoginCubit>().emailController;
+    password= context.read<LoginCubit>().passwordController;
+    form= context.read<LoginCubit>().formKey;
 
     setUpPasswordValidator();
   }

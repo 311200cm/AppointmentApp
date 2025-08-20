@@ -1,15 +1,15 @@
 
-import 'package:appointment_app/features/auth/sign_up/presentation/widgets/already_have_account_text.dart';
-import 'package:appointment_app/features/auth/sign_up/presentation/widgets/create_account_and_sub_text.dart';
-import 'package:appointment_app/features/auth/sign_up/presentation/widgets/sign_up_form.dart';
-import 'package:appointment_app/features/auth/sign_up/presentation/widgets/sign_up_listener.dart';
+import 'package:appointment_app/features/sign_up/logic/sign_up_cubit.dart';
+import 'package:appointment_app/features/sign_up/presentation/widgets/already_have_account_text.dart';
+import 'package:appointment_app/features/sign_up/presentation/widgets/create_account_and_sub_text.dart';
+import 'package:appointment_app/features/sign_up/presentation/widgets/sign_up_form.dart';
+import 'package:appointment_app/features/sign_up/presentation/widgets/sign_up_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/common_widgets/app_text_button.dart';
 import '../../../../core/common_widgets/term_and_condition_text.dart';
-import '../../auth_cubit/auth_cubit.dart';
 
 
 class SignUpScreen extends StatelessWidget {
@@ -42,8 +42,8 @@ class SignUpScreen extends StatelessWidget {
                     AppTextButton(
                       text: "Create Account",
                       onPressed: () {
-                        if(context.read<AuthCubit>().key.currentState!.validate()){
-                          context.read<AuthCubit>().signUp();
+                        if(context.read<SignUpCubit>().key.currentState!.validate()){
+                          context.read<SignUpCubit>().signUp();
                         }
                       },
                     ),

@@ -1,12 +1,13 @@
 
-import 'package:appointment_app/features/auth/sign_up/presentation/widgets/password_and_confirm_password_validation.dart';
+import 'package:appointment_app/features/sign_up/presentation/widgets/password_and_confirm_password_validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/common_widgets/app_text_form_field.dart';
 import '../../../../../core/helpers/app_regex.dart';
-import '../../../auth_cubit/auth_cubit.dart';
+import '../../logic/sign_up_cubit.dart';
+
 
 
 
@@ -35,12 +36,12 @@ class _SignUpFormState extends State<SignUpForm> {
   bool hasMinLength=false;
   void initState(){
     super.initState();
-    email= context.read<AuthCubit>().email;
-    password= context.read<AuthCubit>().password;
-    name= context.read<AuthCubit>().name;
-    confirmPassword= context.read<AuthCubit>().confirmPassword;
-    phone= context.read<AuthCubit>().phone;
-    form= context.read<AuthCubit>().key;
+    email= context.read<SignUpCubit>().email;
+    password= context.read<SignUpCubit>().password;
+    name= context.read<SignUpCubit>().name;
+    confirmPassword= context.read<SignUpCubit>().confirmPassword;
+    phone= context.read<SignUpCubit>().phone;
+    form= context.read<SignUpCubit>().key;
 
     setUpPasswordValidator();
   }

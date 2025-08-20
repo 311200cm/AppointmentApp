@@ -1,11 +1,11 @@
 import 'package:appointment_app/core/helpers/extensions.dart';
+import 'package:appointment_app/features/login/logic/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
-import '../../../auth_cubit/auth_cubit.dart';
 
 
 
@@ -14,7 +14,7 @@ class LoginButtonListen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit,AuthState>(
+    return BlocListener<LoginCubit,LoginState>(
         listener:(context,state){
       if(state is LoginLoading){
         showDialog(

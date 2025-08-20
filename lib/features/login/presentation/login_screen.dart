@@ -2,11 +2,11 @@ import 'package:appointment_app/core/common_widgets/app_text_button.dart';
 import 'package:appointment_app/core/common_widgets/app_text_form_field.dart';
 import 'package:appointment_app/core/helpers/extensions.dart';
 import 'package:appointment_app/core/theming/app_styles.dart';
-import 'package:appointment_app/features/auth/auth_cubit/auth_cubit.dart';
-import 'package:appointment_app/features/auth/login/presentation/widgets/dont_have_account_text.dart';
-import 'package:appointment_app/features/auth/login/presentation/widgets/email_and_password.dart';
-import 'package:appointment_app/features/auth/login/presentation/widgets/login_button_listen.dart';
-import 'package:appointment_app/features/auth/login/presentation/widgets/welcome_back_and_sub_text.dart';
+import 'package:appointment_app/features/login/logic/login_cubit.dart';
+import 'package:appointment_app/features/login/presentation/widgets/dont_have_account_text.dart';
+import 'package:appointment_app/features/login/presentation/widgets/email_and_password.dart';
+import 'package:appointment_app/features/login/presentation/widgets/login_button_listen.dart';
+import 'package:appointment_app/features/login/presentation/widgets/welcome_back_and_sub_text.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,18 +54,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         text: "Login",
                         onPressed: () {
                           if (context
-                              .read<AuthCubit>()
+                              .read<LoginCubit>()
                               .formKey
                               .currentState!
                               .validate()) {
-                            context.read<AuthCubit>().login(
+                            context.read<LoginCubit>().login(
                               LoginRequestBody(
                                 password: context
-                                    .read<AuthCubit>()
+                                    .read<LoginCubit>()
                                     .passwordController
                                     .text,
                                 email: context
-                                    .read<AuthCubit>()
+                                    .read<LoginCubit>()
                                     .emailController
                                     .text,
                               ),
