@@ -69,7 +69,7 @@ class AppTextFormField extends StatelessWidget {
           ),
         ),
         obscureText: obscureText ?? false,
-        style: TextStyles.font16BoldBlackRegular,
+        style: TextStyles.font16DarkBlackRegular,
       ),
     );
   }

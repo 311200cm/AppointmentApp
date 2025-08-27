@@ -1,4 +1,5 @@
 import 'package:appointment_app/core/helpers/extensions.dart';
+import 'package:appointment_app/core/helpers/shared_preferences_keys.dart';
 import 'package:appointment_app/core/theming/app_colors.dart';
 import 'package:appointment_app/core/theming/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class GetStartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(onPressed: (){
-      context.pushNamed(Routes.loginScreen);
+      context.pushNamed(isLogged?Routes.homeScreen:Routes.loginScreen);
     }, child: Text("Get Started",
       style: TextStyles.font16WhiteSemiBold,
     ),

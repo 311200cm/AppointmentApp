@@ -17,7 +17,7 @@ class AlreadyHaveAccountText extends StatelessWidget {
             children: [
               TextSpan(
                   text: "Already have account?",
-                  style: TextStyles.font14BoldBlackRegular
+                  style: TextStyles.font14DarkBlackRegular
               ),
               TextSpan(
                   recognizer:TapGestureRecognizer()

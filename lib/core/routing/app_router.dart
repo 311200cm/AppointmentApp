@@ -1,5 +1,6 @@
 import 'package:appointment_app/core/di/dependancy_injection.dart';
 import 'package:appointment_app/core/routing/routes.dart';
+import 'package:appointment_app/features/home/logic/home_cubit.dart';
 import 'package:appointment_app/features/home/presentation/home_screen.dart';
 import 'package:appointment_app/features/login/logic/login_cubit.dart';
 import 'package:appointment_app/features/sign_up/logic/sign_up_cubit.dart';
@@ -23,7 +24,11 @@ class AppRouter {
               child: LoginScreen(),
             ));
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => HomeCubit(getIt())..getSpecialization(),
+              child: HomeScreen(),
+            ));
       case Routes.signupScreen:
         return MaterialPageRoute(builder: (_) =>
             BlocProvider(

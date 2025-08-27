@@ -55,7 +55,7 @@ class SignUpListener extends StatelessWidget {
                 foregroundColor: Colors.white, backgroundColor: Colors.blue,
               ),
               onPressed: () {
-                context.pushNamed(Routes.loginScreen);
+                context.pushNamed(Routes.homeScreen);
               },
               child: const Text('Continue'),
             ),
@@ -76,7 +76,7 @@ class SignUpListener extends StatelessWidget {
         ),
         content: Text(
           error,
-          style: TextStyles.font15BoldBlueMedium,
+          style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [
           TextButton(

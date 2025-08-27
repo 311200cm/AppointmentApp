@@ -23,11 +23,11 @@ class BuildValidatorRow extends StatelessWidget {
           radius: 4,
         ),
         Text(text,
-          style: TextStyles.font14BoldBlackRegular.copyWith(
+          style: TextStyles.font14DarkBlackRegular.copyWith(
     decoration: hasRowValidator ? TextDecoration.lineThrough : null,
     decorationColor: Colors.green,
     decorationThickness: 2,
-    color: hasRowValidator ? AppColors.gray : AppColors.boldBlack,
+    color: hasRowValidator ? AppColors.gray : AppColors.darkBlack,
     ),),
       ],
     );

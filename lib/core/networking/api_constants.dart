@@ -2,6 +2,7 @@ class ApiConstants{
   static const apiBaseUrl="https://vcare.integration25.com/api";
   static const  login="/auth/login";
   static const  signUp="/auth/register";
+  static const specialization="/specialization/index";
 }
 //TODO: this class using to show error message in case error (followed by ApiErrorHandler)
 class ApiErrors {

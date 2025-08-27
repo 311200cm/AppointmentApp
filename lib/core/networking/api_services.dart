@@ -1,4 +1,5 @@
 
+import 'package:appointment_app/features/home/data/models/specialization_response_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../features/login/data/models/login_request_body.dart';
@@ -18,4 +19,7 @@ abstract class ApiServices{
 @POST(ApiConstants.signUp)
 
   Future<SignupResponse>postSignup(@Body() SignupRequestBody signupRequestBody);
+
+@GET(ApiConstants.specialization)
+  Future<SpecializationResponseModel>getSpecialization();
 }

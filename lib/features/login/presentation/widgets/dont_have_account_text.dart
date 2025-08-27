@@ -17,7 +17,7 @@ class DontHaveAccountText extends StatelessWidget {
           children: [
             TextSpan(
               text: "Do net have account?",
-              style: TextStyles.font14BoldBlackRegular
+              style: TextStyles.font14DarkBlackRegular
             ),
             TextSpan(
               recognizer:TapGestureRecognizer()

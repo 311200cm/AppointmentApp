@@ -2,7 +2,11 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 
+import '../../../core/helpers/shared_preferences_helper.dart';
+import '../../../core/helpers/shared_preferences_keys.dart';
+import '../../../core/helpers/strings.dart';
 import '../../../core/networking/api_error_handler.dart';
+import '../../../core/networking/dio.dart';
 import '../data/models/sign_up_request_body.dart';
 import '../data/models/sign_up_response.dart';
 import '../data/repo/sign_up_repo.dart';
@@ -36,6 +40,9 @@ class SignUpCubit extends Cubit<SignUpState> {
       );
       if(signupResponse.code==200){
         emit(SignupSuccessfully(signupResponse: signupResponse));
+       await SharedPreferencesHelper.setSecuredString(SharedPreferencesKeys.userToke, signupResponse.data?.token??" ");
+        DioFactory.getTokenAfterLoginOrSignUp(signupResponse.data?.token??" ");
+        userName=signupResponse.data!.userName??" ";
       }
       else{
         emit(SignupWithError(errorHandler:  ErrorHandler.handle(signupResponse)));

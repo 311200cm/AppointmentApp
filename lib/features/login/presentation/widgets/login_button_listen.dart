@@ -50,7 +50,7 @@ class LoginButtonListen extends StatelessWidget {
         ),
         content: Text(
           error,
-          style: TextStyles.font15BoldBlueMedium,
+          style: TextStyles.font15DarkBlueMedium,
         ),
         actions: [
           TextButton(

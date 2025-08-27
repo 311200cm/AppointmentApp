@@ -1,4 +1,5 @@
 import 'package:appointment_app/core/networking/api_services.dart';
+import 'package:appointment_app/features/home/data/repo/home_repo.dart';
 import 'package:appointment_app/features/login/logic/login_cubit.dart';
 import 'package:appointment_app/features/sign_up/logic/sign_up_cubit.dart';
 import 'package:dio/dio.dart';
@@ -21,4 +22,7 @@ Future<void> setupGetIt() async {
   //signup
   getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt(),));
+
+  //home
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 }
