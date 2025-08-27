@@ -23,3 +23,8 @@
 
 <img width="284" height="554" alt="2025-08-18 (4)" src="https://github.com/user-attachments/assets/fa905c6a-95c9-40a2-b5f3-167ad5ad5b0b" />
 
+## Home Design
+<img width="290" height="589" alt="2025-08-27" src="https://github.com/user-attachments/assets/67f14399-9d68-4374-b191-d2a1f2fbea4b" />
+
+<img width="278" height="597" alt="2025-08-27 (1)" src="https://github.com/user-attachments/assets/bce46d9e-8e46-4409-9085-15e2d30bc450" />
+
