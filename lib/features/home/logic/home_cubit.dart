@@ -1,4 +1,5 @@
 import 'package:appointment_app/core/networking/api_error_handler.dart';
+import 'package:appointment_app/core/networking/api_error_model.dart';
 import 'package:appointment_app/features/home/data/models/specialization_response_model.dart';
 import 'package:appointment_app/features/home/data/repo/home_repo.dart';
 import 'package:bloc/bloc.dart';
@@ -23,11 +24,11 @@ class HomeCubit extends Cubit<HomeState> {
       }
       else{
         print("Error from Response ${response.code}");
-        emit(SpecializationHomeWithError(errorHandler: ErrorHandler.handle(response)));
+        emit(SpecializationHomeWithError(errorHandler: ApiErrorHandler.handle(response)));
       }
     }catch(error){
       print("Error from cubit $error");
-      emit(SpecializationHomeWithError(errorHandler: ErrorHandler.handle(error)));
+      emit(SpecializationHomeWithError(errorHandler: ApiErrorHandler.handle(error)));
     }
   }
 
@@ -40,7 +41,7 @@ class HomeCubit extends Cubit<HomeState> {
      emit(GetDoctorsListSuccessfully(doctors: doctorsList));
    }
    else{
-     emit(GetDoctorsListWithError(error: ErrorHandler.handle("no found doctor")));
+     emit(GetDoctorsListWithError(error: ApiErrorHandler.handle("no found doctor")));
    }
   }
 }

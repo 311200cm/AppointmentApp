@@ -1,6 +1,7 @@
 import 'package:appointment_app/core/helpers/shared_preferences_helper.dart';
 import 'package:appointment_app/core/helpers/shared_preferences_keys.dart';
 import 'package:appointment_app/core/helpers/strings.dart';
+import 'package:appointment_app/core/networking/api_error_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
@@ -35,11 +36,11 @@ class LoginCubit extends Cubit<LoginState> {
       }
       else{
         print("Error from response ${loginResponse!.message}");
-        emit(LoginWithError(error: ErrorHandler.handle(loginResponse)));
+        emit(LoginWithError(error: ApiErrorHandler.handle(loginResponse)));
       }
     }catch(error){
-      print("Error from cubit $error");
-      emit(LoginWithError(error: ErrorHandler.handle(error)));
+      print("Error from cubit ${error}");
+      emit(LoginWithError(error: ApiErrorHandler.handle(error)));
     }
   }
 }

@@ -24,7 +24,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
             return SizedBox(
               height: 100.h,
               child: Center(
-                  child: Text(state.error.apiErrorModel.message.toString(),
+                  child: Text(state.error.getAllMessagesError(),
                     style: TextStyles.font24MainBlueBold,
                   )
               ),

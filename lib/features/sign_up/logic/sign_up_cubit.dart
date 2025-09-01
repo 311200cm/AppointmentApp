@@ -1,3 +1,4 @@
+import 'package:appointment_app/core/networking/api_error_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
@@ -45,11 +46,11 @@ class SignUpCubit extends Cubit<SignUpState> {
         userName=signupResponse.data!.userName??" ";
       }
       else{
-        emit(SignupWithError(errorHandler:  ErrorHandler.handle(signupResponse)));
+        emit(SignupWithError(errorHandler:  ApiErrorHandler.handle(signupResponse)));
       }
     } catch (error) {
       print("error from repo $error");
-      emit(SignupWithError(errorHandler: ErrorHandler.handle(error)));
+      emit(SignupWithError(errorHandler: ApiErrorHandler.handle(error)));
     }
   }
 }

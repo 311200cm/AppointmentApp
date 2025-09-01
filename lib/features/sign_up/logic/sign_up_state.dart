@@ -12,7 +12,7 @@ class SignupSuccessfully extends SignUpState{
 }
 class SignupWithError extends SignUpState{
 
-  ErrorHandler errorHandler;
+  ApiErrorModel errorHandler;
 
   SignupWithError({required this.errorHandler});
 }

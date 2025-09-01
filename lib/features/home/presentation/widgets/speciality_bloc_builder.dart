@@ -45,7 +45,7 @@ class SpecialityBlocBuilder extends StatelessWidget {
             return SizedBox(
               height: 100.h,
               child: Center(
-                child: Text(state.errorHandler.apiErrorModel.message.toString(),
+                child: Text(state.errorHandler.getAllMessagesError(),
                 style: TextStyles.font24MainBlueBold,
                 )
               ),

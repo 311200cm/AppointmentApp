@@ -9,7 +9,7 @@ final class HomeInitial extends HomeState {}
 class SpecializationHomeLoading extends HomeState{}
 class SpecializationHomeWithError extends HomeState{
 
-  ErrorHandler errorHandler;
+  ApiErrorModel errorHandler;
   SpecializationHomeWithError({required this.errorHandler});
 }
 
@@ -24,7 +24,7 @@ class SpecializationHomeWithSuccessfully extends HomeState{
 //TODO:we dont need loading state because we not call end point
 class GetDoctorsListWithError extends HomeState{
 
-  ErrorHandler error;
+  ApiErrorModel error;
   GetDoctorsListWithError({required this.error});
 }
 

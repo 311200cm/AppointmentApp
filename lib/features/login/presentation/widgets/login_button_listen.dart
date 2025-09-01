@@ -32,7 +32,7 @@ class LoginButtonListen extends StatelessWidget {
         context.pushNamed(Routes.homeScreen);
       }
       else if (state is LoginWithError){
-        setupErrorState(context,state.error.apiErrorModel.message!);
+        setupErrorState(context,state.error.getAllMessagesError());
       }
     },
     child:SizedBox.shrink()

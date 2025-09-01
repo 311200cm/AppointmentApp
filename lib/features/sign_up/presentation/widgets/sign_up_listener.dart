@@ -30,7 +30,7 @@ class SignUpListener extends StatelessWidget {
             showSuccessDialog(context);
           }
           else if (state is SignupWithError){
-            setupErrorState(context,state.errorHandler.apiErrorModel.message!);
+            setupErrorState(context,state.errorHandler.getAllMessagesError());
           }
         },
         child:SizedBox.shrink()

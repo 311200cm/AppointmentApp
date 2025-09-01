@@ -7,7 +7,7 @@ final class LoginInitial extends LoginState {}
 
 class LoginLoading extends LoginState{}
 class LoginWithError extends LoginState{
-  ErrorHandler error;
+  ApiErrorModel error;
   LoginWithError({required this.error});
 }
 class LoginSuccessfully extends LoginState{
